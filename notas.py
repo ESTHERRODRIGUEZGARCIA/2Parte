@@ -44,7 +44,7 @@ def calculoMediaAritmetica(caracteristica):
 
    return mediaAritmetica
 
-def calculoMediana(caracteristica):
+def calculoMediana(self, caracteristica):
    mediana = 0
    caracteristica = caracteristica.sort_values()
    caracteristica = caracteristica.reset_index(drop=True)
