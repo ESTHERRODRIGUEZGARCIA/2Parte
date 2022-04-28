@@ -18,6 +18,7 @@ observaciones = pd.read_csv("Pokemon.csv")
 
 print("— CANTIDAD DE OBSERVACIONES --")
 n = reader.count()
+count = 0   # contador de observaciones
 print("Cantidad de observaciones = " + str(n))
 
 print ("\n-- MIN --")
