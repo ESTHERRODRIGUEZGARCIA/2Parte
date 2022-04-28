@@ -5,6 +5,7 @@ from math import sqrt
 import os
 from typing import Counter
 import pandas as pd
+import matplotlib.pyplot as plt
 
 
 
@@ -112,3 +113,5 @@ def calculoDelosCuartiles(self,mediana,rangoMediana):
        valorMaxQ3 = sort_caracteristica[(rangoMediana+(nbDatosDesdeMediana/2))]
        q3 = (valorMin + ((valorMax - valorMin) / 2) + valorMax) / 2
    return ([q1, q2, q3])
+
+

@@ -1,28 +1,15 @@
-# funcion que me cree la media de la variable total
+# crear gráfico
 
-from math import sqrt
-import os
-from typing import Counter
-import pandas as pd
-
-
-
+from matplotlib import pyplot as plt
+import notas
 import csv
-f= open("Pokemon.csv")
-reader = csv.reader(f)
-for row in reader:
-    print (row)
+import sys
 
-observaciones = pd.read_csv("Pokemon.csv")
+# funcion que cree un gráfico del csv
+
+def grafico(caracteristica):
+    plt.hist(caracteristica)
+    plt.show()
 
 
-def mediaAritmetica(caracteristica):
-    n = caracteristica.count()
-    sumaValorObservaciones = 0
-    mediaAritmetica = 0
-    if n>0 :
-        for valorObservacion in caracteristica:
-            sumaValorObservaciones = sumaValorObservaciones + valorObservacion
-        mediaAritmetica = sumaValorObservaciones / n
-    return mediaAritmetica
 
