@@ -43,4 +43,8 @@ variable HP: 25.5346690
 variable Speed: 29.8289157
 
 
+Conclusión de los datos:
 
+Tenemos un total de 800 valores, de los cuáles hemos recogido la información citada anteriormente.
+Hay varios tipos de pokemons: Water, Normal, Grass, Fire, Bug, Electric... Los más abundantes son el tipo "Normal" y "Water". Además vuelan un 12% de ellos.
+Su poder de ataque está comprendido entre 180 y 780. Sus puntos de golpe va entre 1 y 255, fuerza de golpe entre 5 y 190, de defensa entre 5 y 230.
