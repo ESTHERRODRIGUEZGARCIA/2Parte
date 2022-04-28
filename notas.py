@@ -17,10 +17,6 @@ for row in reader:
 observaciones = pd.read_csv("Pokemon.csv")
 
 
-count = 0   # contador de observaciones
-print("— CANTIDAD DE OBSERVACIONES --")
-n = reader.count()
-print("Cantidad de observaciones = " + str(n))
 
 print ("\n-- MIN --")
 valoresOrdenados = reader.sort_values()
