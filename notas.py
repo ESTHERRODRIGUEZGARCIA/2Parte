@@ -1,8 +1,18 @@
 
 # media
 
+from math import sqrt
+import os
+os.chdir("C:\\Datos")
+os.getcwd()
 
+import csv
+f= open("Pokemon.csv")
+reader = csv.reader(f)
+for row in reader:
+    print (row)
 
+# dos es la multiplicación xi*ni
 class Media:
     #Constructor
     def __init__(self, dataset, col1, col2):
@@ -12,18 +22,18 @@ class Media:
 
     def calcular_media(self):
 
-        def calcular_xini():
-            xini = []
+        def calcular_dos():
+            dos = []
             for i in range (len(self.dataset)):
                 resultado = self.dataset[self.col1][i]*self.dataset[self.col2][i]
-                xini.append(resultado)
-            return xini
+                dos.append(resultado)
+            return dos
 
-        self.dataset["XiNi"] = calcular_xini()
-        suma_xini = self.dataset["XiNi"].sum()
+        self.dataset["XiNi"] = calcular_dos()
+        suma_dos = self.dataset["DOS"].sum()
         suma_ni = self.dataset[self.col2].sum()
 
-        return suma_xini/suma_ni
+        return suma_dos/suma_ni
 
 
 def calcular_std(dataset, col1, col2):
