@@ -3,8 +3,9 @@
 
 from math import sqrt
 import os
-os.chdir("C:\\Datos")
-os.getcwd()
+import pandas as pd
+
+
 
 import csv
 f= open("Pokemon.csv")
@@ -12,6 +13,28 @@ reader = csv.reader(f)
 for row in reader:
     print (row)
 
+observaciones = pd.DataFrame({'NOTAS':np.array(['Pokemon.csv'])})
+print("— CANTIDAD DE OBSERVACIONES --")
+n = reader.count()
+print("Cantidad de observaciones = " + str(n))
+
+print ("\n-- MIN --")
+valoresOrdenados = reader.sort_values()
+valoresOrdenados = valoresOrdenados.reset_index(drop=True)
+print("Valor mínimo: "+str(valoresOrdenados [0]))
+
+print ("\n-- MAX --")
+valoresOrdenados = reader.sort_values()
+valoresOrdenados = valoresOrdenados.reset_index(drop=True)
+print("Valor máximo: " + str(valoresOrdenados[len(valoresOrdenados)-1]))
+
+
+# funcion que cree una columna con el resultado de la media
+def calcular_media(dataset, col1, col2):
+    media = dataset[col2].sum()/dataset[col1].sum()
+    return media
+
+# funcion que me dev
 # dos es la multiplicación xi*ni
 class Media:
     #Constructor
