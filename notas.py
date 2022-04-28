@@ -91,7 +91,7 @@ def calculoDelosCuartiles(self,mediana,rangoMediana):
    q1 = 0
    q2 = mediana
    q3 = 0
-  
+
    #Calculo Q1
    restoDivision = rangoMediana%2
    if (restoDivision != 0):
@@ -100,21 +100,15 @@ def calculoDelosCuartiles(self,mediana,rangoMediana):
        valorMin = sort_caracteristica[((rangoMediana/2)-1)]
        valorMax = sort_caracteristica[(rangoMediana/2)]
        q1 = (valorMin + ((valorMax - valorMin) / 2) + valorMax) / 2
-  
+
    # Calculo Q3
    nbdatos = len(sort_caracteristica)+1
    nbDatosDesdeMediana = nbdatos - rangoMediana
    restoDivision = nbDatosDesdeMediana % 2
-   if (restoDivision != 0):  
-       q3 =  
-sort_caracteristica[(rangoMediana+ceil(nbDatosDesdeMediana/2))-1]  
-   else:  
-       valorMinQ3 =  
-sort_caracteristica[(rangoMediana+(nbDatosDesdeMediana/2))-1]  
-       valorMaxQ3 =  
-sort_caracteristica[(rangoMediana+(nbDatosDesdeMediana/2))]  
-       q3 = (valorMin + ((valorMax - valorMin) / 2) +  
-valorMax) / 2  
-  
-  
-   return ([q1, q2, q3]) 
+   if (restoDivision != 0):
+       q3 = sort_caracteristica[nbDatosDesdeMediana - 1]
+   else:
+       valorMinQ3 = sort_caracteristica[(rangoMediana+(nbDatosDesdeMediana/2))-1]
+       valorMaxQ3 = sort_caracteristica[(rangoMediana+(nbDatosDesdeMediana/2))]
+       q3 = (valorMin + ((valorMax - valorMin) / 2) + valorMax) / 2
+   return ([q1, q2, q3])
