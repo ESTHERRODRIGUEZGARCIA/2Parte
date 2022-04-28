@@ -44,7 +44,7 @@ def calculoMediaAritmetica(caracteristica):
            sumaValoresObservaciones = sumaValoresObservaciones + valorObservacion
        mediaAritmetica = sumaValorObservaciones / n
 
-   return mediaAritmetica
+   print("La media es ", mediaAritmetica)
 
 def calculoMediana(self, caracteristica):
    mediana = 0
