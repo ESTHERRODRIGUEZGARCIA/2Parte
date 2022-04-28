@@ -66,7 +66,7 @@ def calculoMediana(self, caracteristica):
        mediana = caracteristica [rangoPython]
    return mediana
 
-#crear una funcion que me dvuelva el valor mas repetido
+#Calculo la moda
 def calculoModa(caracteristica):
     moda = Counter(caracteristica)
     return moda.most_common(1)
