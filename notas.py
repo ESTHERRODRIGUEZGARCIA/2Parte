@@ -17,16 +17,18 @@ for row in reader:
 observaciones = pd.read_csv("Pokemon.csv")
 
 
-
+# crear una funcion que e devuelva el valor minimo y maximo
 print ("\n-- MIN --")
-valoresOrdenados = reader.sort_values()
-valoresOrdenados = valoresOrdenados.reset_index(drop=True)
-print("Valor mínimo: "+str(valoresOrdenados [0]))
+def calculoValorMinimo(caracteristica):
+    valorMin = caracteristica.min()
+    print("Valor mínimo: ", valorMin)
 
 print ("\n-- MAX --")
-valoresOrdenados = reader.sort_values()
-valoresOrdenados = valoresOrdenados.reset_index(drop=True)
-print("Valor máximo: " + str(valoresOrdenados[len(valoresOrdenados)-1]))
+def cacluloValorMAX(caracteristica):
+    valorMax = caracteristica.max()
+    print("Valor máximo: " +valorMax)
+
+
 
 
 print ("\n-- MEDIA --")
