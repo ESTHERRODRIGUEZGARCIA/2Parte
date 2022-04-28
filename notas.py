@@ -3,6 +3,7 @@
 
 from math import sqrt
 import os
+from typing import Counter
 import pandas as pd
 
 
@@ -65,8 +66,55 @@ def calculoMediana(caracteristica):
        mediana = caracteristica [rangoPython]
    return mediana
 
-
-
+#crear una funcion que me dvuelva el valor mas repetido
 def calculoModa(caracteristica):
-   moda = Counter(caracteristica)
-   return moda
+    moda = Counter(caracteristica)
+    return moda.most_common(1)
+
+Counter(observaciones["Type 1"])
+
+def rango(caracteristica):
+    caracteristica = caracteristica.sort_values()
+    caracteristica = caracteristica.reset_index(drop=True)
+    n = len(caracteristica)
+    rango = (caracteristica[n-1] - caracteristica[0])
+    return rango
+
+
+# funcion para los cuartiles
+
+
+def calculoDelosCuartiles(self,mediana,rangoMediana):
+   n = self.caracteristica.count()
+   sort_caracteristica = self.caracteristica.sort_valores()
+   sort_caracteristica = sort_caracteristica.reset_index(drop=True)
+   q1 = 0
+   q2 = mediana
+   q3 = 0
+  
+   #Calculo Q1
+   restoDivision = rangoMediana%2
+   if (restoDivision != 0):
+       q1 = sort_caracteristica[((rangoMediana/2)+1)-1]
+   else:
+       valorMin = sort_caracteristica[((rangoMediana/2)-1)]
+       valorMax = sort_caracteristica[(rangoMediana/2)]
+       q1 = (valorMin + ((valorMax - valorMin) / 2) + valorMax) / 2
+  
+   # Calculo Q3
+   nbdatos = len(sort_caracteristica)+1
+   nbDatosDesdeMediana = nbdatos - rangoMediana
+   restoDivision = nbDatosDesdeMediana % 2
+   if (restoDivision != 0):  
+       q3 =  
+sort_caracteristica[(rangoMediana+ceil(nbDatosDesdeMediana/2))-1]  
+   else:  
+       valorMinQ3 =  
+sort_caracteristica[(rangoMediana+(nbDatosDesdeMediana/2))-1]  
+       valorMaxQ3 =  
+sort_caracteristica[(rangoMediana+(nbDatosDesdeMediana/2))]  
+       q3 = (valorMin + ((valorMax - valorMin) / 2) +  
+valorMax) / 2  
+  
+  
+   return ([q1, q2, q3]) 
